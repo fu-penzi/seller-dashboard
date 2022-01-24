@@ -1,6 +1,6 @@
 import { Bar, Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
-import { useTheme } from "@emotion/react";
+import { useTheme } from '@mui/material/styles';
 
 Chart.register(...registerables);
 
