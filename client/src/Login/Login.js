@@ -49,18 +49,21 @@ export default function Login() {
       mx: "auto"
     }}>
       <Widget>
-        <form onSubmit={handleSubmit}>
-          <LoginInput
-            name="login"
-            placeholder={t("Adres e-mail lub login")}
-          />
-          <LoginInput
-            name="password"
-            type="password"
-            placeholder={t("Hasło")}
-          />
-          <LoginButton />
-        </form>
+        {data => (
+          <form onSubmit={handleSubmit}>
+            <LoginInput
+              name="login"
+              placeholder={t("Adres e-mail lub login")}
+            />
+            <LoginInput
+              name="password"
+              type="password"
+              placeholder={t("Hasło")}
+            />
+            <LoginButton />
+          </form>
+        )}
+
       </Widget>
     </Box>
   );

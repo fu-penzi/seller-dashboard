@@ -61,7 +61,7 @@ const saleData = {
                 ]
             }
         },
-        today: {
+        "today": {
             false: {
                 labels: [
                     "1:00",

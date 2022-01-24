@@ -2,7 +2,6 @@ import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import { AuthProvider } from "./Login/AuthContext";
 import { BrowserRouter } from "react-router-dom";
-
 import App from "./App";
 import i18n from "./i18n";
 import { StyledEngineProvider } from "@mui/material";

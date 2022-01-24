@@ -9,13 +9,13 @@ const data = require('./data')
 
 
 app.get('/login', function (req, res, next) {
-    res.json({
+    res.send({
         'sutatus': 'Sukces!'
     });
 });
 
 app.get('/saledata/:username', function (req, res, next) {
-    res.json(data.saleData(req.params.username));
+    res.send(data.saleData(req.params.username));
 });
 
 app.listen(3001, function() {

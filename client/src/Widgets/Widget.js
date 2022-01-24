@@ -1,7 +1,9 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import { styled } from "@mui/system";
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, CircularProgress, Divider, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { AuthContext } from "../Login/AuthContext";
+import { apiUrl } from "../config";
 
 const WidgetName = styled("a")({
   display: "block",
@@ -20,6 +22,7 @@ const StyledBox = (props) => (
         md: 5,
         xl: 6
       },
+      minHeight: "275px",
       height: "100%",
       display: "flex",
       flexDirection: "column",
@@ -34,6 +37,22 @@ const StyledBox = (props) => (
 );
 export default function Widget(props) {
   const { t } = useTranslation();
+  const auth = useContext(AuthContext);
+  const [loading, setLoading] = React.useState(props.load ? true : false);
+  const [data, setData] = React.useState();
+  React.useEffect(() => {
+    if (props.load) {
+      fetch(`${apiUrl}/${props.load}/${auth.user}`)
+        .then(res => {
+          if (res.ok) {
+            return res.json();
+          }
+        }).then(data => {
+          setData(data);
+          setLoading(false)
+        });
+    }
+  }, []);
   return (
     <StyledBox>
       {props.name && (
@@ -46,7 +65,10 @@ export default function Widget(props) {
           <Divider />
         </div>
       )}
-      {props.children}
+      {loading
+        ? <CircularProgress sx={{ mx: "auto" }} />
+        : props.children(data)
+      }
       <div />
     </StyledBox>
   );

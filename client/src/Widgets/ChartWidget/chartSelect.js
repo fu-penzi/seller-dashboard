@@ -36,12 +36,12 @@ export const chartSelect = [
         value: "today"
       },
       {
-        name: "current-week",
-        value: "Obecny tydzień"
+        name: "Obecny tydzień",
+        value: "current-week"
       },
       {
-        name: "next-week",
-        value: "Następny tydzień"
+        name: "Następny tydzień",
+        value: "next-week"
       }
     ]
   }

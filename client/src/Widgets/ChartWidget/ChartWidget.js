@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -8,43 +8,19 @@ import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import SaleChart from "./SaleChart";
 import { useTranslation } from "react-i18next";
-import { AuthContext } from "../../Login/AuthContext";
-// to remove
-import { getTodayData } from "./ChartData";
 import { chartSelect } from "./chartSelect";
-
 
 export default function ChartWidget(props) {
   const { t } = useTranslation();
-  const auth = useContext(AuthContext);
-  const [data, setData] = React.useState(getTodayData("mock", "money-circulation", false));
-  const [chartSelect, setChartSelect] = React.useState({
+  const [chartSettings, setchartSettings] = React.useState({
     dataType: "money-circulation",
     type: "line",
     timeSpan: "today",
   });
   const [previous, setPrevious] = React.useState(false);
-  //this.auth = React.useContext(AuthContext);
-  //   componentDidMount() {
-  //     this.getData();
-  //   }
-
-  //   getData() {
-  //     fetch(`"http://localhost:3001"/saledata/${this.context.user}`)
-  //     .then(res => {
-  //       if (res.ok) {
-  //           return res.json()
-  //       }
-  //     }).then(data => {
-  //       this.setState({
-  //         data: data
-  //       })
-  //     });
-  //   }
-
-  const onChartSelectChange = (e) => {
-    setChartSelect({
-      ...chartSelect,
+  const onChartSettingsChange = (e) => {
+    setchartSettings({
+      ...chartSettings,
       [e.target.name]: e.target.value,
     })
   }
@@ -55,7 +31,7 @@ export default function ChartWidget(props) {
     <Box className="WidgetContentWrapper">
       <Grid container spacing={2}>
         <Grid item xs={12} md={9}>
-          <SaleChart data={data} type={chartSelect.type} />
+          <SaleChart data={props.data[chartSettings.timeSpan][previous]} type={chartSettings.type} />
         </Grid>
         <Grid item xs={12} md={3}>
           <Box
@@ -73,13 +49,13 @@ export default function ChartWidget(props) {
                 <Select
                   labelId={select.label}
                   name={select.name}
-                  value={chartSelect[select.name]}
+                  value={chartSettings[select.name]}
                   label={select.label}
-                  onChange={onChartSelectChange}
+                  onChange={onChartSettingsChange}
                 >
-                {select.menuItems.map((menuItem)=>(
-                  <MenuItem key={menuItem.value} value={menuItem.value}>{t(menuItem.name)}</MenuItem>
-                ))}
+                  {select.menuItems.map((menuItem) => (
+                    <MenuItem key={menuItem.value} value={menuItem.value}>{t(menuItem.name)}</MenuItem>
+                  ))}
                 </Select>
               </FormControl>
             ))}
