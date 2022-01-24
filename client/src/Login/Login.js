@@ -1,7 +1,7 @@
 import {
   Button,
   FormControl,
-  Grid,
+  Box,
   TextField,
   Typography
 } from "@mui/material";
@@ -25,7 +25,6 @@ const LoginInput = (props) => {
 };
 const LoginButton = () => {
   const { t } = useTranslation();
-
   return (
     <Button fullWidth sx={{ height: 48 }} variant="contained" type="submit">
       <Typography variant="button">{t("Zaloguj się")}</Typography>
@@ -45,23 +44,24 @@ export default function Login() {
     navigate(from, { replace: true });
   };
   return (
-    <Grid container justifyContent="center">
-      <Grid item xs={12} sm={8} md={6} lg={4}>
-        <Widget>
-          <form onSubmit={handleSubmit}>
-            <LoginInput
-              name="login"
-              placeholder={t("Adres e-mail lub login")}
-            />
-            <LoginInput
-              name="password"
-              type="password"
-              placeholder={t("Hasło")}
-            />
-            <LoginButton />
-          </form>
-        </Widget>
-      </Grid>
-    </Grid>
+    <Box sx={{
+      maxWidth: "500px",
+      mx: "auto"
+    }}>
+      <Widget>
+        <form onSubmit={handleSubmit}>
+          <LoginInput
+            name="login"
+            placeholder={t("Adres e-mail lub login")}
+          />
+          <LoginInput
+            name="password"
+            type="password"
+            placeholder={t("Hasło")}
+          />
+          <LoginButton />
+        </form>
+      </Widget>
+    </Box>
   );
 }

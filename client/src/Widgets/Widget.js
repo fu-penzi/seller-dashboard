@@ -20,9 +20,13 @@ const StyledBox = (props) => (
         md: 5,
         xl: 6
       },
+      height: "100%",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
       boxShadow: 2,
       backgroundColor: "background.default",
-      borderRadius: 3
+      borderRadius: 3,
     }}
   >
     {props.children}
@@ -33,16 +37,17 @@ export default function Widget(props) {
   return (
     <StyledBox>
       {props.name && (
-        <>
+        <div>
           <WidgetName href={props.href} id={props.href.substring(1)}>
             <Typography variant="h5" component="h2">
               {t(props.name)}
             </Typography>
           </WidgetName>
           <Divider />
-        </>
+        </div>
       )}
       {props.children}
+      <div />
     </StyledBox>
   );
 }

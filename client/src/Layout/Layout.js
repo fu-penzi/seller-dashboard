@@ -1,4 +1,4 @@
-import { useTheme } from '@mui/material/styles';
+import { useTheme } from "@emotion/react";
 import { Box, Container, Divider } from "@mui/material";
 import { Outlet } from "react-router";
 import NavBar from "./NavBar";
@@ -15,13 +15,13 @@ export default function Layout(props) {
       <NavBar toggleNightMode={props.toggleNightMode} isDark={props.isDark} />
       <Box
         sx={{
-          m: 3,
+          my: 3,
           minHeight: "75vh",
           mx: {
             xs: 2,
             md: 4,
             lg: 10,
-            xl: 15
+            xl: 18
           }
         }}
       >
@@ -34,7 +34,7 @@ export default function Layout(props) {
           display: "flex",
           alignItems: "center",
           p: 2,
-          minHeight: "5vh"
+          minHeight: "10vh"
         }}
       >
         © 2021-2022 Bottom text

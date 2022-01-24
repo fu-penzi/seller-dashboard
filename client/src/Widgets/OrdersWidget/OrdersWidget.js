@@ -3,8 +3,7 @@ import {
   Link,
   Box,
   Typography,
-  Divider,
-  Container
+  Divider
 } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 
@@ -15,11 +14,9 @@ import { styled } from "@mui/system";
 const orderTypes = ["Nieopłacone", "Niewysłane", "Zwroty"];
 const links = ["unpaid", "unsent", "returns"];
 
-const Orders = styled(Container)({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-around",
-  maxWidth: "350px"
+const Orders = styled(Box)({
+  margin: "auto",
+  maxWidth: "300px"
 });
 const Order = styled(Box)({
   display: "flex",

@@ -14,10 +14,10 @@ app.get('/login', function (req, res, next) {
     });
 });
 
-app.get('/saledata/:username/:period/:previous', function (req, res, next) {
-    res.json(data.saleData(req.params.username, req.params.period, req.params.previous));
+app.get('/saledata/:username', function (req, res, next) {
+    res.json(data.saleData(req.params.username));
 });
 
 app.listen(3001, function() {
-    console.log('Listening!');
+    console.log('Listening at http://localhost:3001');
 })

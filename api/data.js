@@ -344,7 +344,7 @@ module.exports = {
     users: function(name, password) {
 
     },
-    saleData: function(name, period,previous){
-        return saleData[name][period][previous];
+    saleData: function(name){
+        return saleData[name];
     }
 }
