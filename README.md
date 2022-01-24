@@ -1,5 +1,4 @@
-# panel-sprzedawcy
-Created with CodeSandbox
+# seller-dashboard
 
 # instrukcja startowania projektu
 
