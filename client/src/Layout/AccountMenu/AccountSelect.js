@@ -7,24 +7,17 @@ import { useTranslation } from "react-i18next";
 
 export default function AccountSelect(props) {
   const { t } = useTranslation();
-
-  let [users, setUsers] = useState([
-    {
-      name: "Test"
-    }
-  ]);
-  let auth = useContext(AuthContext);
   return (
     <Dialog onClose={props.onClose} open={props.open}>
       <DialogTitle>{t("Wybierz konto")}</DialogTitle>
       <List sx={{ pt: 0 }} onClick={props.onClose}>
-        {users.map((user, id) => (
+        {props.data.map((user, id) => (
           <MenuListItem
             key={id}
-            avatar={<Avatar alt={user.name} src="" />}
-            onClick={() => props.onSelect(user.name)}
+            avatar={<Avatar alt={user.username} src={`./images/${user.username}.jpg`} />}
+            onClick={() => props.onSelect(user.username)}
             user={{
-              name: user.name
+              name: user.username
             }}
           />
         ))}

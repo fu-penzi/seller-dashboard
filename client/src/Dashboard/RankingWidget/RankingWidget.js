@@ -5,16 +5,6 @@ import TableBody from "@mui/material/TableBody";
 import TableContainer from "@mui/material/TableContainer";
 import OfferRankingHead from "./OfferRankingHead";
 import { BodyRow, Cell, OfferCell, OfferName } from "./Styles";
-function createData(name, imgName, totalSold, moneyCirculation, uniqueViews) {
-  return { name, imgName, totalSold, moneyCirculation, uniqueViews };
-}
-const rows = [
-  createData("Xiaomi Mi 11 Lite", "xiaomi-mi-11-lite.jpg", 159, 519, 159),
-  createData("Apple iPhone X", "iphone-x.jpg", 237, 155, 129),
-  createData("Apple iPhone 7", "iphone-7.jpg", 305, 165, 199),
-  createData("Samsung Galaxy S20", "samsung-galaxy-s20.jpg", 262, 2159, 169),
-  createData("Huawei P30 Pro", "huawei-p30-pro.jpg", 356, 159, 29)
-];
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
     return -1;
@@ -30,7 +20,7 @@ function getComparator(order, orderBy) {
     : (a, b) => -descendingComparator(a, b, orderBy);
 }
 
-export default function RankingWidget() {
+export default function RankingWidget(props) {
   const [order, setOrder] = React.useState("asc");
   const handleSort = () => {
     setOrder(order === "asc" ? "desc" : "asc");
@@ -44,7 +34,7 @@ export default function RankingWidget() {
             onSort={handleSort}
           />
           <TableBody>
-            {rows
+            {props.data
               .slice()
               .sort(getComparator(order, "totalSold"))
               .map((row) => {

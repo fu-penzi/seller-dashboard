@@ -16,11 +16,11 @@ const NavBarIcon = (props) => (
 );
 export default function NavBar(props) {
   let auth = React.useContext(AuthContext);
-
   const { t } = useTranslation();
   const [isSideMenuOpen, setIsSideMenuOpen] = React.useState(false);
   const [isAccountMenuOpen, setIsAccountMenuOpen] = React.useState(false);
   const handleSideMenuOpen = () => {
+    console.log(`./images/${auth.user}.jpg`)
     setIsSideMenuOpen(true);
   };
   const handleSideMenuClose = () => {
@@ -52,7 +52,7 @@ export default function NavBar(props) {
             {!auth.isAuthenticated ? (
               <AccountCircleIcon />
             ) : (
-              <Avatar sx={{ width: "24px", height: "24px" }} alt="P" src="" />
+              <Avatar sx={{ width: "32px", height: "32px" }} alt={auth.user} src={`./images/${auth.user}.jpg`} />
             )}
           </NavBarIcon>
         </Toolbar>

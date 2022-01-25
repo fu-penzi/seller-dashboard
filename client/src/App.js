@@ -5,10 +5,10 @@ import Login from "./Login/Login";
 import { Box, ThemeProvider } from "@mui/material";
 import getTheme from "./theme";
 import { withTranslation } from "react-i18next";
-import Widgets from "./Widgets/Widgets";
-import OrdersPlaceholder from "./Widgets/OrdersWidget/OrdersPlaceholder";
+import OrdersPlaceholder from "./Dashboard/OrdersWidget/OrdersPlaceholder";
 import Layout from "./Layout/Layout";
 import PrivateRoute from "./Login/PrivateRoute";
+import Dashboard from "./Dashboard/Dashboard";
 
 class App extends React.Component {
   constructor(props) {
@@ -49,7 +49,7 @@ class App extends React.Component {
                 path="/"
                 element={
                   <PrivateRoute>
-                    <Widgets theme={this.state.theme} />
+                    <Dashboard theme={this.state.theme} />
                   </PrivateRoute>
                 }
               />

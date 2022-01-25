@@ -21,18 +21,17 @@ app.post('/login', async (req, res) => {
     } else {
         res.send({
             login: signinUser.username,
-            group: "GroupID"
         });
     }
     res.send();
 });
 
-app.get('/login', function (req, res, next) {
-    res.send({
-        'sutatus': 'Sukces!'
-    });
+app.get('/group/:username', function (req, res, next) {
+    res.send(data.group(req.params.username));
 });
-
+app.get('/ranking/:username', function (req, res, next) {
+    res.send(data.ranking(req.params.username));
+});
 app.get('/orders/:username', function (req, res, next) {
     res.send(data.offers(req.params.username));
 });

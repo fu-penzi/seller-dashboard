@@ -27,7 +27,7 @@ export default function MenuListItem(props) {
         <ListItemText
           primary={
             <React.Fragment>
-              <Typography component="span" variant="h6">
+              <Typography component="span">
                 {props.user.name}
               </Typography>
             </React.Fragment>

@@ -7,6 +7,7 @@ import {
   Avatar
 } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
+import LoadingComponent from "../../Common/LoadingComponent";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import React, { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -27,6 +28,7 @@ export default function AccountMenu(props) {
   };
   const onAccountSelect = (value) => {
     auth.authenticate(value);
+    props.onClose();
   };
   return (
     <Drawer anchor="right" open={props.isOpen} onClose={props.onClose}>
@@ -39,17 +41,22 @@ export default function AccountMenu(props) {
         </List>
       ) : (
         <React.Fragment>
-          <AccountSelect
-            open={accountSelectOpen}
-            onClose={handleAccountSelectClose}
-            onSelect={onAccountSelect}
-          />
+          <LoadingComponent load="group">
+            {data => (
+              <AccountSelect
+                data={data}
+                open={accountSelectOpen}
+                onClose={handleAccountSelectClose}
+                onSelect={onAccountSelect}
+              />
+            )}
+          </LoadingComponent>
           <List sx={{ p: 0 }}>
             <MenuListItem
               sx={{ pb: 0 }}
               key="User"
               notButton
-              avatar={<Avatar alt="P" src="" />}
+              avatar={<Avatar alt={auth.user} src={`./images/${auth.user}.jpg`}/>}
               user={{
                 name: auth.user,
                 mail: "textdolny@gmail.com"
