@@ -4,7 +4,9 @@
 
 cd api
 
-node server.js
+npm install
+
+npm start
 
 cd ../client
 
