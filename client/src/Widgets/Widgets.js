@@ -48,7 +48,7 @@ const widgets = [
     component: OrdersWidget,
     name: "Zamówienia",
     href: "#orders",
-    load: "",
+    load: "orders",
     grid: {
       xs: 12,
       sm: 6

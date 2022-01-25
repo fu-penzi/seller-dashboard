@@ -11,9 +11,20 @@ import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { styled } from "@mui/system";
 
-const orderTypes = ["Nieopłacone", "Niewysłane", "Zwroty"];
-const links = ["unpaid", "unsent", "returns"];
-
+const orders = [
+  {
+    id: "unpaid",
+    name: "Nieopłacone",
+  },
+  {
+    id: "unsent",
+    name: "Niewysłane",
+  },
+  {
+    id: "returns",
+    name: "Zwroty",
+  }
+]
 const Orders = styled(Box)({
   margin: "auto",
   maxWidth: "300px"
@@ -35,23 +46,13 @@ const OrderType = styled(RouterLink)({
 
 export default function OrdersWidget(props) {
   const { t } = useTranslation();
-  const [alertOpen, setAlertOpen] = React.useState(true);
-  const [orders, setOrders] = React.useState({
-    Nieopłacone: 1,
-    Niewysłane: 4,
-    Zwroty: 2,
-    Razem: 0
-  });
+  const [alertOpen, setAlertOpen] = React.useState(false);
+  const total = Object.values(props.data).reduce((a, b) => a + b);
   React.useEffect(() => {
-    // async function fetchData() {
-    //   return await fetch("https://hn.algolia.com/api/v1/search?query=redux");
-    // }
-    // var result = fetchData();
-    // setOrders(result.orders);
-    if (orders.Razem === 0) {
+    if (total === 0) {
       setAlertOpen(true);
     }
-  }, [orders.Razem]);
+  },[]);
 
   return (
     <Box className="OrdersWidget WidgetContentWrapper">
@@ -69,16 +70,16 @@ export default function OrdersWidget(props) {
         </Alert>
       )}
       <Orders sx={{ mt: 2 }}>
-        {orderTypes.map((orderType, id) => (
-          <Order key={links[id]}>
-            <OrderType to={"orders/" + links[id]}>
+        {orders.map((order, id) => (
+          <Order key={order.id}>
+            <OrderType to={"orders/" + order.id}>
               <Typography variant="h5" component="span">
-                {t(orderType)}
+                {t(order.name)}
                 {":"}
               </Typography>
             </OrderType>
             <Typography variant="h4" component="span">
-              {orders[orderType]}
+              {props.data[order.id]}
             </Typography>
           </Order>
         ))}
@@ -105,7 +106,7 @@ export default function OrdersWidget(props) {
           {t("Razem")}
         </Typography>
         <Typography variant="h3" component="span">
-          {orders.Razem}
+          {total}
         </Typography>
       </Box>
     </Box>

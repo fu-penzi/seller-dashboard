@@ -339,12 +339,31 @@ const saleData = {
     },
 
 };
-
-module.exports = {
-    users: function(name, password) {
-
+const orders = {
+    "william": {
+        unpaid: 1,
+        unsent: 4,
+        returns: 2,
     },
-    saleData: function(name){
+    "bill": {
+        unpaid: 11,
+        unsent: 2,
+        returns: 0,
+    },
+    "robert": {
+        unpaid: 0,
+        unsent: 0,
+        returns: 0,
+    },
+}
+module.exports = {
+    users: function (name, password) {
+        return users.find((user) => user.username === name && user.password === password);
+    },
+    offers: function (name) {
+        return orders[name];
+    },
+    saleData: function (name) {
         return saleData[name];
     }
 }

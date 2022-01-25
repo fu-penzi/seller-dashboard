@@ -8,6 +8,7 @@ import {
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
+import { apiUrl } from "../config";
 import Widget from "../Widgets/Widget";
 import { AuthContext } from "./AuthContext";
 const LoginInput = (props) => {
@@ -15,7 +16,7 @@ const LoginInput = (props) => {
     <FormControl fullWidth sx={{ mb: 1 }}>
       <TextField
         name={props.name}
-        // required
+        required
         id={props.name}
         type={props.type ? props.type : ""}
         placeholder={props.placeholder}
@@ -40,8 +41,26 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    auth.authenticate(new FormData(e.currentTarget).get("login"));
-    navigate(from, { replace: true });
+    const form = new FormData(e.currentTarget);
+    const data = {
+      login: form.get("login"),
+      password: form.get("password"),
+    }
+    fetch(`${apiUrl}/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    }).then(res => {
+      if (res.ok) {
+        console.log(res)
+        return res.json();
+      }
+    }).then(data => {
+      auth.authenticate(data.login);
+      navigate(from, { replace: true });
+    });
   };
   return (
     <Box sx={{
