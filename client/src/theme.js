@@ -24,6 +24,9 @@ function getTheme(themeMode) {
             },
             chartBorderSecondary: {
               main: "#9c27b0"
+            },
+            chartCurrent: {
+              main: "#fcae1e"
             }
           }
         : {
@@ -45,6 +48,9 @@ function getTheme(themeMode) {
             },
             chartBorderSecondary: {
               main: "#7b1fa2"
+            },
+            chartCurrent: {
+              main: "#f9812a"
             }
           })
     }
