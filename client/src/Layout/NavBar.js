@@ -20,7 +20,6 @@ export default function NavBar(props) {
   const [isSideMenuOpen, setIsSideMenuOpen] = React.useState(false);
   const [isAccountMenuOpen, setIsAccountMenuOpen] = React.useState(false);
   const handleSideMenuOpen = () => {
-    console.log(`./images/${auth.user}.jpg`)
     setIsSideMenuOpen(true);
   };
   const handleSideMenuClose = () => {

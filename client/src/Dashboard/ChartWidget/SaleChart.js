@@ -1,11 +1,13 @@
 import { Bar, Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
 import { useTheme } from '@mui/material/styles';
+import { useTranslation } from "react-i18next";
 
 Chart.register(...registerables);
 
 export default function SaleChart(props) {
-  let data = props.data;
+  const { t } = useTranslation();
+  const { data } = props;
   const theme = useTheme();
   data.datasets[0].backgroundColor = theme.palette.chartPrimary.main;
   data.datasets[0].borderColor = theme.palette.chartBorderPrimary.main;
@@ -14,9 +16,6 @@ export default function SaleChart(props) {
     data.datasets[1].backgroundColor = theme.palette.chartSecondary.main;
     data.datasets[1].borderColor = theme.palette.chartBorderSecondary.main;
   }
-
-  data.labels = data.labels.map((s) => props.t(s));
-
   let options = {
     plugins: {
       legend: {
@@ -38,8 +37,8 @@ export default function SaleChart(props) {
     }
   };
   return props.type === "bar" ? (
-    <Bar data={data} options={options} />
+    <Bar data={{ ...data, labels: data.labels.map((s) => t(s)) }} options={options} />
   ) : (
-    <Line data={data} options={options} />
+    <Line data={{ ...data, labels: data.labels.map((s) => t(s)) }} options={options} />
   );
 }

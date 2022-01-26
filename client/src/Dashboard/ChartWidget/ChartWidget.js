@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 import { chartSelect } from "./chartSelect";
 
 export default function ChartWidget(props) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [chartSettings, setchartSettings] = React.useState({
     dataType: "money-circulation",
     type: "line",
@@ -31,7 +31,7 @@ export default function ChartWidget(props) {
     <Box className="WidgetContentWrapper">
       <Grid container spacing={2}>
         <Grid item xs={12} md={9}>
-          <SaleChart data={props.data[chartSettings.timeSpan][chartSettings.dataType][previous]} type={chartSettings.type} t={t}/>
+          <SaleChart data={props.data[chartSettings.timeSpan][chartSettings.dataType][previous]} type={chartSettings.type}/>
         </Grid>
         <Grid item xs={12} md={3}>
           <Box
