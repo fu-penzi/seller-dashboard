@@ -15,6 +15,8 @@ export default function SaleChart(props) {
     data.datasets[1].borderColor = theme.palette.chartBorderSecondary.main;
   }
 
+  data.labels = data.labels.map((s) => props.t(s));
+
   let options = {
     plugins: {
       legend: {

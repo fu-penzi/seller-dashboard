@@ -30,6 +30,14 @@ const resources = {
 
       "Dane z poprzedniego okresu": "Data from previous period",
 
+      "Pon": "Mon",
+      "Wt": "Tue",
+      "Śr": "Wed",
+      "Czw": "Thu",
+      "Pt": "Fri",
+      "Sob": "Sat",
+      "Niedz": "Sun",
+
       Nieopłacone: "Unpaid",
       Niewysłane: "Unsent",
       Zwroty: "Returns",
@@ -66,4 +74,5 @@ i18n
       escapeValue: false // react already safes from xss
     }
   });
+
 export default i18n;
