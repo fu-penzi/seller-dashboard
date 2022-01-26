@@ -40,7 +40,7 @@ export const chartSelect = [
         value: "current-week"
       },
       {
-        name: "Następny tydzień",
+        name: "Ostatni tydzień",
         value: "next-week"
       }
     ]

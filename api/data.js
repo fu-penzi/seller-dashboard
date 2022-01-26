@@ -25,20 +25,23 @@ const saleData = {
     "current-week": {
       "money-circulation": {
         false: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels: ["20.01", "21.01", "22.01", "23.01", "24.01", "25.01", "26.01"],
           datasets: [
             {
+              label: "ten tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
         },
         true: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["20.01", "21.01", "22.01", "23.01", "24.01", "25.01", "26.01"],
           datasets: [
             {
+              label: "ten tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             },
             {
+              label: "poprzedni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
@@ -46,20 +49,23 @@ const saleData = {
       },
       "sold-items": {
         false: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["20.01", "21.01", "22.01", "23.01", "24.01", "25.01", "26.01"],
           datasets: [
             {
+              label: "ten tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
         },
         true: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["20.01", "21.01", "22.01", "23.01", "24.01", "25.01", "26.01"],
           datasets: [
             {
+              label: "ten tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             },
             {
+              label: "poprzedni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
@@ -69,20 +75,23 @@ const saleData = {
     "next-week": {
       "money-circulation": {
         false: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["13.01", "14.01", "15.01", "16.01", "17.01", "18.01", "19.01"],
           datasets: [
             {
+              label: "ostatin tydzeiń",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
         },
         true: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["13.01", "14.01", "15.01", "16.01", "17.01", "18.01", "19.01"],
           datasets: [
             {
+              label: "ostatni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             },
             {
+              label: "poprzedni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
@@ -90,20 +99,23 @@ const saleData = {
       },
       "sold-items": {
         false: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["13.01", "14.01", "15.01", "16.01", "17.01", "18.01", "19.01"],
           datasets: [
             {
+              label: "ostatni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
         },
         true: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["13.01", "14.01", "15.01", "16.01", "17.01", "18.01", "19.01"],
           datasets: [
             {
+              label: "ostatni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             },
             {
+              label: "poprzedni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
@@ -132,7 +144,7 @@ const saleData = {
           ],
           datasets: [
             {
-              label: "today",
+              label: "dzisiaj",
               data: [...new Array(15)].map(() => Math.random() * 100)
             }
           ]
@@ -165,11 +177,11 @@ const saleData = {
           ],
           datasets: [
             {
-              label: "today",
+              label: "dzisiaj",
               data: [...new Array(15)].map(() => Math.random() * 100)
             },
             {
-              label: "yesterday",
+              label: "wczoraj",
               data: [...new Array(24)].map(() => Math.random() * 100)
             }
           ]
@@ -196,7 +208,7 @@ const saleData = {
           ],
           datasets: [
             {
-              label: "today",
+              label: "dzisiaj",
               data: [...new Array(15)].map(() => Math.random() * 100)
             }
           ]
@@ -229,11 +241,11 @@ const saleData = {
           ],
           datasets: [
             {
-              label: "today",
+              label: "dzisiaj",
               data: [...new Array(15)].map(() => Math.random() * 100)
             },
             {
-              label: "yesterday",
+              label: "wczoraj",
               data: [...new Array(24)].map(() => Math.random() * 100)
             }
           ]
@@ -245,20 +257,23 @@ const saleData = {
     "current-week": {
       "money-circulation": {
         false: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels: ["20.01", "21.01", "22.01", "23.01", "24.01", "25.01", "26.01"],
           datasets: [
             {
+              label: "ten tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
         },
         true: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["20.01", "21.01", "22.01", "23.01", "24.01", "25.01", "26.01"],
           datasets: [
             {
+              label: "ten tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             },
             {
+              label: "poprzedni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
@@ -266,20 +281,23 @@ const saleData = {
       },
       "sold-items": {
         false: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["20.01", "21.01", "22.01", "23.01", "24.01", "25.01", "26.01"],
           datasets: [
             {
+              label: "ten tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
         },
         true: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["20.01", "21.01", "22.01", "23.01", "24.01", "25.01", "26.01"],
           datasets: [
             {
+              label: "ten tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             },
             {
+              label: "poprzedni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
@@ -289,20 +307,23 @@ const saleData = {
     "next-week": {
       "money-circulation": {
         false: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["13.01", "14.01", "15.01", "16.01", "17.01", "18.01", "19.01"],
           datasets: [
             {
+              label: "ostatin tydzeiń",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
         },
         true: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["13.01", "14.01", "15.01", "16.01", "17.01", "18.01", "19.01"],
           datasets: [
             {
+              label: "ostatni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             },
             {
+              label: "poprzedni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
@@ -310,20 +331,23 @@ const saleData = {
       },
       "sold-items": {
         false: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["13.01", "14.01", "15.01", "16.01", "17.01", "18.01", "19.01"],
           datasets: [
             {
+              label: "ostatni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
         },
         true: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["13.01", "14.01", "15.01", "16.01", "17.01", "18.01", "19.01"],
           datasets: [
             {
+              label: "ostatni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             },
             {
+              label: "poprzedni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
@@ -352,7 +376,7 @@ const saleData = {
           ],
           datasets: [
             {
-              label: "today",
+              label: "dzisiaj",
               data: [...new Array(15)].map(() => Math.random() * 100)
             }
           ]
@@ -385,11 +409,11 @@ const saleData = {
           ],
           datasets: [
             {
-              label: "today",
+              label: "dzisiaj",
               data: [...new Array(15)].map(() => Math.random() * 100)
             },
             {
-              label: "yesterday",
+              label: "wczoraj",
               data: [...new Array(24)].map(() => Math.random() * 100)
             }
           ]
@@ -416,7 +440,7 @@ const saleData = {
           ],
           datasets: [
             {
-              label: "today",
+              label: "dzisiaj",
               data: [...new Array(15)].map(() => Math.random() * 100)
             }
           ]
@@ -449,11 +473,11 @@ const saleData = {
           ],
           datasets: [
             {
-              label: "today",
+              label: "dzisiaj",
               data: [...new Array(15)].map(() => Math.random() * 100)
             },
             {
-              label: "yesterday",
+              label: "wczoraj",
               data: [...new Array(24)].map(() => Math.random() * 100)
             }
           ]
@@ -465,20 +489,23 @@ const saleData = {
     "current-week": {
       "money-circulation": {
         false: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels: ["20.01", "21.01", "22.01", "23.01", "24.01", "25.01", "26.01"],
           datasets: [
             {
+              label: "ten tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
         },
         true: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["20.01", "21.01", "22.01", "23.01", "24.01", "25.01", "26.01"],
           datasets: [
             {
+              label: "ten tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             },
             {
+              label: "poprzedni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
@@ -486,20 +513,23 @@ const saleData = {
       },
       "sold-items": {
         false: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["20.01", "21.01", "22.01", "23.01", "24.01", "25.01", "26.01"],
           datasets: [
             {
+              label: "ten tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
         },
         true: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["20.01", "21.01", "22.01", "23.01", "24.01", "25.01", "26.01"],
           datasets: [
             {
+              label: "ten tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             },
             {
+              label: "poprzedni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
@@ -509,20 +539,23 @@ const saleData = {
     "next-week": {
       "money-circulation": {
         false: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["13.01", "14.01", "15.01", "16.01", "17.01", "18.01", "19.01"],
           datasets: [
             {
+              label: "ostatin tydzeiń",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
         },
         true: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["13.01", "14.01", "15.01", "16.01", "17.01", "18.01", "19.01"],
           datasets: [
             {
+              label: "ostatni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             },
             {
+              label: "poprzedni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
@@ -530,20 +563,23 @@ const saleData = {
       },
       "sold-items": {
         false: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["13.01", "14.01", "15.01", "16.01", "17.01", "18.01", "19.01"],
           datasets: [
             {
+              label: "ostatni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
         },
         true: {
-          labels: ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Niedz"],
+          labels:  ["13.01", "14.01", "15.01", "16.01", "17.01", "18.01", "19.01"],
           datasets: [
             {
+              label: "ostatni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             },
             {
+              label: "poprzedni tydzień",
               data: [...new Array(7)].map(() => Math.random() * 100)
             }
           ]
@@ -572,7 +608,7 @@ const saleData = {
           ],
           datasets: [
             {
-              label: "today",
+              label: "dzisiaj",
               data: [...new Array(15)].map(() => Math.random() * 100)
             }
           ]
@@ -605,11 +641,11 @@ const saleData = {
           ],
           datasets: [
             {
-              label: "today",
+              label: "dzisiaj",
               data: [...new Array(15)].map(() => Math.random() * 100)
             },
             {
-              label: "yesterday",
+              label: "wczoraj",
               data: [...new Array(24)].map(() => Math.random() * 100)
             }
           ]
@@ -636,7 +672,7 @@ const saleData = {
           ],
           datasets: [
             {
-              label: "today",
+              label: "dzisiaj",
               data: [...new Array(15)].map(() => Math.random() * 100)
             }
           ]
@@ -669,11 +705,11 @@ const saleData = {
           ],
           datasets: [
             {
-              label: "today",
+              label: "dzisiaj",
               data: [...new Array(15)].map(() => Math.random() * 100)
             },
             {
-              label: "yesterday",
+              label: "wczoraj",
               data: [...new Array(24)].map(() => Math.random() * 100)
             }
           ]
@@ -681,7 +717,6 @@ const saleData = {
       }
     }
   },
-
 };
 const orders = {
   "william": {

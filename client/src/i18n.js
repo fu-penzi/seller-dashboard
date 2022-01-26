@@ -26,17 +26,15 @@ const resources = {
       "Zakres czasu": "Time span",
       Dzisiaj: "Today",
       "Obecny tydzień": "Current week",
-      "Następny tydzień": "Next week",
+      "Ostatni tydzień": "Last week",
 
-      "Dane z poprzedniego okresu": "Data from previous period",
+      "Poprzedni okres": "Previous time span",
 
-      "Pon": "Mon",
-      "Wt": "Tue",
-      "Śr": "Wed",
-      "Czw": "Thu",
-      "Pt": "Fri",
-      "Sob": "Sat",
-      "Niedz": "Sun",
+      "dzisiaj": "today",
+      "wczoraj": "yesterday",
+      "ten tydzień": "this week",
+      "ostatni tydzień": "last week",
+      "poprzedni tydzień": "previous week",
 
       Nieopłacone: "Unpaid",
       Niewysłane: "Unsent",
@@ -59,7 +57,7 @@ const resources = {
       "najrzadziej kupowane": "least buyed",
       Sprzedano: "Sold",
       Wyświetlenia: "Views",
-      Oferta: "Offer"
+      Oferta: "Offer",
     }
   }
 };

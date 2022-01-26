@@ -66,7 +66,7 @@ export default function ChartWidget(props) {
                   onChange={onPreviousPeriodChange}
                 />
               }
-              label={t("Dane z poprzedniego okresu")}
+              label={t("Poprzedni okres")}
             />
           </Box>
         </Grid>
