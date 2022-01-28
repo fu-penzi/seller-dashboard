@@ -37,11 +37,9 @@ export default function SaleChart(props) {
     }
   };
 
-  console.log(data.labels.map((s) => t(s)));
-
   return props.type === "bar" ? (
-    <Bar data={{ ...data,/* labels: data.labels.map((s) => t(s)),*/ datasets: data.datasets.map((d) => {return {...d, label: t(d.label)};}) }} options={options} />
+    <Bar data={{ ...data, datasets: data.datasets.map((d) => {return {...d, label: t(d.label)};}) }} options={options} />
   ) : (
-    <Line data={{ ...data,/* labels: data.labels.map((s) => t(s)),*/ datasets: data.datasets.map((d) => {return {...d, label: t(d.label)};}) }} options={options} />
+    <Line data={{ ...data, datasets: data.datasets.map((d) => {return {...d, label: t(d.label)};}) }} options={options} />
   );
 }
