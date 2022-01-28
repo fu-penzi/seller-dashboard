@@ -9,7 +9,11 @@ export default function SaleChart(props) {
   const { t } = useTranslation();
   const { data } = props;
   const theme = useTheme();
-  data.datasets[0].backgroundColor = theme.palette.chartPrimary.main;
+  if (props.timeSpan === "today" || props.timeSpan === "current-week") {
+    data.datasets[0].backgroundColor = [...(Array(data.datasets[0].data.length - 1).fill(theme.palette.chartPrimary.main)), theme.palette.chartCurrent.main]
+  } else {
+    data.datasets[0].backgroundColor = theme.palette.chartPrimary.main;
+  }
   data.datasets[0].borderColor = theme.palette.chartBorderPrimary.main;
 
   if (data.datasets.length === 2) {
@@ -37,11 +41,9 @@ export default function SaleChart(props) {
     }
   };
 
-  console.log(data.labels.map((s) => t(s)));
-
   return props.type === "bar" ? (
-    <Bar data={{ ...data,/* labels: data.labels.map((s) => t(s)),*/ datasets: data.datasets.map((d) => {return {...d, label: t(d.label)};}) }} options={options} />
+    <Bar data={{ ...data, datasets: data.datasets.map((d) => {return {...d, label: t(d.label)};}) }} options={options} />
   ) : (
-    <Line data={{ ...data,/* labels: data.labels.map((s) => t(s)),*/ datasets: data.datasets.map((d) => {return {...d, label: t(d.label)};}) }} options={options} />
+    <Line data={{ ...data, datasets: data.datasets.map((d) => {return {...d, label: t(d.label)};}) }} options={options} />
   );
 }

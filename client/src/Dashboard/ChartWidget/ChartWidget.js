@@ -31,7 +31,7 @@ export default function ChartWidget(props) {
     <Box className="WidgetContentWrapper">
       <Grid container spacing={2}>
         <Grid item xs={12} md={9}>
-          <SaleChart data={props.data[chartSettings.timeSpan][chartSettings.dataType][previous]} type={chartSettings.type}/>
+          <SaleChart data={props.data[chartSettings.timeSpan][chartSettings.dataType][previous]} type={chartSettings.type} timeSpan={chartSettings.timeSpan} />
         </Grid>
         <Grid item xs={12} md={3}>
           <Box
